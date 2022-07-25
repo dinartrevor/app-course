@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => '\\App\\Http\\Controllers',
+        'middleware' => ['web', 'admin'],
+    ],
+    function () {
+        Route::resource('course', 'CourseController');
+        Route::resource('article', 'ArtikelController');
+    }
+);
+
 Route::get('/', function () {
     return view('welcome');
 });
