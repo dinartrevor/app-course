@@ -8,7 +8,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-
+use Encore\Admin\Show;
 class CourseController extends AdminController
 {
     protected $courses;
@@ -56,10 +56,10 @@ class CourseController extends AdminController
         return $form;
     }
     public function detail($id) {
-        $show = new Show($this->career->findOrFail($id));
-        $show->field('name', "Name");
-        $show->field('career_category.name', "Category Career");
-        $show->field('description', 'Description')->setEscape(false);
+        $show = new Show($this->courses->findOrFail($id));
+        $show->field('namaCourse', "Nama Kursus");
+        $show->field('video', "Link Video");
+        $show->field('deskripsi', 'Deskripsi Kursus');
         return $show;
     }
 }
