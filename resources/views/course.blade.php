@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$value->namaCourse}}</h5>
-                                    <p class="card-text">{{$value->deskripsi}}</p>
+                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->deskripsi, 150, $end='...') }}</p>
                                     <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
                                 </div>
                             </div>

@@ -216,7 +216,7 @@
                             <div class="card" style="width: 20rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
-                                    <p class="card-text">{{$value->isiArtikel}}</p>
+                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
                                     <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
                                 </div>
                             </div>
