@@ -33,12 +33,12 @@ Route::group(
     function () {
         Route::get('/', 'UserController@login')->name('login.user');;
         Route::get('register', 'UserController@register')->name('register.user');
+        Route::get('user', 'UserController@user')->name('user.user');
+        Route::get('course', 'UserController@course')->name('course.user');
+        Route::get('artikel', 'UserController@artikel')->name('artikel.user');
     }
 );
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 // Route::get('/', function () {
 //     return view('login');
 // });

@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('user.user')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -195,21 +195,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="row">  
-                        <div class="card-header"><H3>Course Terbaru</H3></div>
-                    </div>
-                    <div class="row"> 
-                    @foreach($course as $value)
-                        <div class="col-md-4 mb-3">
-                            <div class="embed-responsive embed-responsive-21by9">
-                                <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
-                            </div>
-                        </div>
-                    @endforeach
-                    </div>
-                    <div class="row">  
-                        <div class="card-header"><H3>Artikel Terbaru</H3></div>
-                    </div>
+
+                    <!-- Page Heading -->
                     <div class="row"> 
                         @foreach($artikel as $value)
                         <div class="col-md-4 mb-3">
@@ -224,16 +211,16 @@
                         @endforeach
                     </div>
                 </div>
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; KitaTani2022</span>
-                        </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; KitaTani2022</span>
                     </div>
-                </footer>
-                <!-- End of Footer -->
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
         <!-- End of Content Wrapper -->
 

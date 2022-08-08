@@ -42,15 +42,15 @@
                                         <input type="text" class="form-control form-control-user" id="name" placeholder="Nama" name="name">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control form-control-user" id="exampleLastName" placeholder="Nomor Handphone" name="handphone">
+                                        <input type="number" class="form-control form-control-user" id="handphone" placeholder="Nomor Handphone" name="handphone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="email" class="form-control form-control-user" id="exampleFirstName" placeholder="Email" name="email">
+                                        <input type="email" class="form-control form-control-user" id="email" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleLastName" placeholder="Password" name="password">
+                                        <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
