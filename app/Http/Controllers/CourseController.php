@@ -28,6 +28,10 @@ class CourseController extends AdminController
             $filter->like('namaCourse');
             $filter->between('updated_at')->datetime();
         });
+        if(Admin::user()->isRole('administrator')){
+            $grid->disableCreateButton();
+
+        }
 
         $grid->disableExport();
 
