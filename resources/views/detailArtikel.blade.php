@@ -123,30 +123,10 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
-                        
-
-                        <!-- Nav Item - Messages -->
-                        
-
                         <div class="topbar-divider d-none d-sm-block"></div>
+                        
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -183,39 +163,32 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <div class="row">  
-                        <div class="card-header"><H3>Course Terbaru</H3></div>
-                    </div>
-                    <div class="row"> 
-                    @foreach($course as $value)
-                        <div class="col-md-4 mb-3">
-                            <div class="embed-responsive embed-responsive-21by9">
-                                <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
+                
+                @foreach($detailArtikel as $value)
+                <div class="card-header"><h2>Artikel</h2></div>
+                     <br>
+                            <div class="text-right my-auto">
+                                <p>{{$value->tanggalPembuatan}}</p>
                             </div>
-                        </div>
-                    @endforeach
-                    </div>
-                    <div class="row">  
-                        <div class="card-header"><H3>Artikel Terbaru</H3></div>
-                    </div>
-                    <div class="row"> 
-                        @foreach($artikel as $value)
-                        <div class="col-md-4 mb-3">
-                            <div class="card" style="width: 20rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Lihat Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
+                @endforeach
+                @foreach($detailArtikel as $value)>
+                <div class="text-center ms-auto">
+                    <h3>{{$value->judulArtikel}}</h3>
                 </div>
+                @endforeach
+                <br>
+                @foreach($detailArtikel as $value)
+                <div class="card-body">
+                    <div class="text-center">
+                    </div>
+                            <p>{{$value->isiArtikel}}</p>
+                    </div>
+                    @endforeach
 
+
+                <div class="card-body">
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
+                                </div>
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">

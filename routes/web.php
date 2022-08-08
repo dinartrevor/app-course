@@ -36,15 +36,8 @@ Route::group(
         Route::get('user', 'UserController@user')->name('user.user');
         Route::get('course', 'UserController@course')->name('course.user');
         Route::get('artikel', 'UserController@artikel')->name('artikel.user');
+        Route::get('detailArtikel', 'UserController@detailArtikel')->name('detailArtikel.user');
+        Route::get('detailCourse', 'UserController@detailCourse')->name('detailCourse.user');
     }
 );
 
-// Route::get('/', function () {
-//     return view('login');
-// });
-// Route::get('/', function () {
-//     return view('user');
-// });
-// Route::get('/', function () {
-//     return view('mentor');
-// });

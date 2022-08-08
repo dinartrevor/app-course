@@ -83,6 +83,11 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Artikel</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('artikel.user')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Logout</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -204,7 +209,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Lihat Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

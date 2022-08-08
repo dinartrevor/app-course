@@ -70,4 +70,14 @@ class UserController extends Controller
         }
         return 'https://www.youtube.com/embed/' . $youtube_id ;
     }
+    public function detailArtikel()
+    {
+        $detailArtikel = Artikel::orderByDesc("created_at")
+        ->get();  
+        return view('detailArtikel', compact("detailArtikel"));
+    }
+    public function detailCourse()
+    {
+        return view('detailCourse');
+    }
 }

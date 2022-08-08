@@ -83,6 +83,11 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Artikel</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('artikel.user')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Logout</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -199,14 +204,19 @@
                         @foreach($course as $value)
                         <div class="col-md-4">
                             <!-- Page Heading -->
-                            <div class="card" style="width: 20rem;">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">{{$value->namaCourse}}</h6>
+                                </div>
                                 <div class="embed-responsive embed-responsive-21by9">
                                     <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$value->namaCourse}}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->deskripsi, 150, $end='...') }}</p>
-                                    <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                    <p>{{ \Illuminate\Support\Str::limit($value->deskripsi, 150, $end='...') }}</p>
+                                    <a target="_blank" rel="nofollow" href="{{route('detailCourse.user')}}">Simak Selengkapnya &rarr;</a>
                                 </div>
                             </div>
                         </div>
