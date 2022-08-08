@@ -31,6 +31,10 @@ class ArtikelController extends AdminController
         });
 
         $grid->disableExport();
+        if(Admin::user()->isRole('mentor')){
+            $grid->disableCreateButton();
+
+        }
 
 
         return $grid;
