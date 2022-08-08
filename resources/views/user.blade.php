@@ -191,11 +191,29 @@
                     </div>
                     <div class="row"> 
                     @foreach($course as $value)
-                        <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
+                            <!-- Page Heading -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">{{$value->namaCourse}}</h6>
+                                </div>
+                                <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                    <a target="_blank" rel="nofollow" href="{{route('course.user')}}">Pelajari Course &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-4 mb-3">
                             <div class="embed-responsive embed-responsive-21by9">
                                 <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
                             </div>
-                        </div>
+                        </div> -->
                     @endforeach
                     </div>
                     <div class="row">  
@@ -203,15 +221,31 @@
                     </div>
                     <div class="row"> 
                         @foreach($artikel as $value)
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-4">
+                            <!-- Page Heading -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">{{$value->judulArtikel}}</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 200, $end='...') }}</p>
+                                    <a target="_blank" rel="nofollow" href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-4 mb-3">
                             <div class="card" style="width: 20rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Lihat Selengkapnya</a>
+                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Baca Selengkapnya</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         @endforeach
                     </div>
                 </div>
