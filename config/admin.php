@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'App Course',
+    'name' => 'KitaTani',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>App Course</b>',
+    'logo' => '<b>KitaTani</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>KTS</b>',
 
     /*
     |--------------------------------------------------------------------------

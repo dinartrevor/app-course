@@ -24,13 +24,27 @@ Route::group(
         Route::resource('article', 'ArtikelController');
     }
 );
+Route::group(
+    [
+        'prefix' => '/',
+        'namespace' => '\\App\\Http\\Controllers',
+       // 'middleware' => ['web', 'admin'],
+    ],
+    function () {
+        Route::get('/', 'UserController@login')->name('login.user');;
+        Route::get('register', 'UserController@register')->name('register.user');
+    }
+);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/', function () {
-    return view('login');
-});
-Route::get('/', function () {
-    return view('user');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', function () {
+//     return view('login');
+// });
+// Route::get('/', function () {
+//     return view('user');
+// });
+// Route::get('/', function () {
+//     return view('mentor');
+// });

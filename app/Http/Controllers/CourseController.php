@@ -44,14 +44,17 @@ class CourseController extends AdminController
     protected function form()
     {
 
+        $mentor = Administrator::whereHas('roles', function($q){
+            $q->where('id', '!=', '1');
+        })->get()->pluck("name","id");
+
         $form = new Form($this->courses);
 
         $form->display('id', 'ID');
-
         $form->text('namaCourse',trans('Nama Kursus'))->rules('required');
         $form->text('video',trans('Link Video'))->rules('required');
         $form->textarea('deskripsi',trans('Deskripsi Kursus'))->rules("required");
-        $form->select('idMentor',trans('Mentor'))->options(Administrator::get()->pluck("name","id"))->rules("required");
+        $form->select('idMentor',trans('Mentor'))->options($mentor)->rules("required");
 
         return $form;
     }
