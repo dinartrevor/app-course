@@ -17,7 +17,6 @@ class CourseController extends AdminController
 
     public function __construct(){
         $this->courses = new Course();
-        $this->article = new Artikel();
     }
 
     protected function grid()
