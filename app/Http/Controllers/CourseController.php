@@ -14,7 +14,6 @@ class CourseController extends AdminController
 {
     protected $courses;
     protected $title = "Course";
-    protected $article;
 
     public function __construct(){
         $this->courses = new Course();
@@ -32,27 +31,6 @@ class CourseController extends AdminController
             $filter->between('updated_at')->datetime();
         });
         if(Admin::user()->isRole('administrator')){
-            $grid->disableCreateButton();
-            $grid->disableActions();
-
-        }
-        
-        $grid->disableExport();
-
-
-        return $grid;
-    }
-    protected function gridd()
-    {
-        $grid = new Grid($this->article);
-
-        $grid->id('ID')->sortable();
-        $grid->judulArtikel()->ucfirst()->limit(30);
-        $grid->filter(function ($filter) {
-            $filter->like('judulArtikel');
-            $filter->between('updated_at')->datetime();
-        });
-        if(Admin::user()->isRole('mentor')){
             $grid->disableCreateButton();
             $grid->disableActions();
 
