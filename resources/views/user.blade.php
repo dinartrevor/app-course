@@ -198,7 +198,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">{{$value->namaCourse}}</h6>
                                 </div>
                                 <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
+                                    <iframe class="embed-responsive-item" autoplay src="{{$value->embed_video}}"></iframe>
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">

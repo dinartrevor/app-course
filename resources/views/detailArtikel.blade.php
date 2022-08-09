@@ -164,33 +164,29 @@
                 </nav>
                 <!-- End of Topbar -->
                 
-                @foreach($detailArtikel as $value)
-                <div class="card-header"><h2>Artikel</h2></div>
-                     <br>
-                            <div class="text-right my-auto">
-                                <p>{{$value->tanggalPembuatan}}</p>
+              <div class="container-fluid">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6 class="m-0 font-weight-bold text-primary text-center">Illustrations</h6>
                             </div>
-                @endforeach
+                            <div class="col-md-2">
+                                <h6 class="m-0 font-weight-bold float-right">26 Februrai 2022</h6>
 
-                @foreach($detailArtikel as $value)>
-                <div class="text-center ms-auto">
-                    <h3>{{$value->judulArtikel}}</h3>
+                            </div>  
+                        </div> 
+                    </div>
+                    <div class="card-body">
+                        <p>Add some quality, svg illustrations to your project courtesy of 
+                            <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
+                            constantly updated collection of beautiful svg images that you can use
+                            completely free and without attribution!
+                        </p>
+                        <a target="_blank" class="btn btn-primary float-right" href="{{route('artikel.user')}}">Kembali</a>
+                    </div>
                 </div>
-                @endforeach
-                
-                <br>
-                @foreach($detailArtikel as $value)
-                <div class="card-body">
-                    <div class="text-center">
-                    </div>
-                            <p>{{$value->isiArtikel}}</p>
-                    </div>
-                    @endforeach
-
-
-                <div class="card-body">
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                </div>
+              </div>
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
