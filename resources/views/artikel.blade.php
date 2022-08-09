@@ -113,20 +113,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -180,12 +166,18 @@
                     <!-- Page Heading -->
                     <div class="row"> 
                         @foreach($artikel as $value)
-                        <div class="col-md-4 mb-3">
-                            <div class="card" style="width: 20rem;">
+                        <div class="col-md-3">
+                            <!-- Page Heading -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">{{$value->judulArtikel}}</h6>
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Lihat Selengkapnya</a>
+                                    <div class="text-center">
+                                        
+                                    </div>
+                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 200, $end='...') }}</p>
+                                    <a target="_blank" rel="nofollow" href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
                                 </div>
                             </div>
                         </div>

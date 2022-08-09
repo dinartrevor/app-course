@@ -171,11 +171,13 @@
                                 <p>{{$value->tanggalPembuatan}}</p>
                             </div>
                 @endforeach
+
                 @foreach($detailArtikel as $value)>
                 <div class="text-center ms-auto">
                     <h3>{{$value->judulArtikel}}</h3>
                 </div>
                 @endforeach
+                
                 <br>
                 @foreach($detailArtikel as $value)
                 <div class="card-body">

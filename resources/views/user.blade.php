@@ -187,7 +187,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="row">  
-                        <div class="card-header"><H3>Course Terbaru</H3></div>
+                        <div class="card-header text-center"><H3>Course Terbaru</H3></div>
                     </div>
                     <div class="row"> 
                     @foreach($course as $value)
@@ -204,11 +204,11 @@
                                     <div class="text-center">
                                         
                                     </div>
-                                    <a target="_blank" rel="nofollow" href="{{route('course.user')}}">Pelajari Course &rarr;</a>
+                                    <a target="_blank" rel="nofollow" href="{{route('detailCourse.user')}}">Pelajari Course &rarr;</a>
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- <div class="col-md-4 mb-3">
                             <div class="embed-responsive embed-responsive-21by9">
                                 <iframe class="embed-responsive-item" src="{{$value->embed_video}}"></iframe>
@@ -217,7 +217,7 @@
                     @endforeach
                     </div>
                     <div class="row">  
-                        <div class="card-header"><H3>Artikel Terbaru</H3></div>
+                        <div class="card-header text-center"><H3>Artikel Terbaru</H3></div>
                     </div>
                     <div class="row"> 
                         @foreach($artikel as $value)
