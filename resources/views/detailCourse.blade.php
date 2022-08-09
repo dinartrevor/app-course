@@ -199,15 +199,15 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
+                                    <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DFviVDjM_ek"></iframe>
+                                </div>
                                     </div>
                                     <p>Add some quality, svg illustrations to your project courtesy of <a
                                             target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
                                         constantly updated collection of beautiful svg images that you can use
                                         completely free and without attribution!</p>
-                                            <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                                unDraw &rarr;</a>
+                                            <a target="_blank" rel="nofollow" href="{{route('course.user')}}">Kembali</a>
                                 </div>
                             </div>
                         </div>
@@ -220,16 +220,9 @@
                                                 <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
                                                     <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">Marry Andrews</span><span class="date text-black-50">Shared publicly - Jan 2020</span></div>
                                                 </div>
-                                                <div class="mt-2">
-                                                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                </div>
+                                                
                                             </div>
                                             <div class="bg-white">
-                                                <div class="d-flex flex-row fs-12">
-                                                    <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
-                                                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
-                                                    <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
-                                                </div>
                                             </div>
                                             <div class="bg-light p-2">
                                                 <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
