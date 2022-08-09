@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use App\Models\Course;
 use App\Models\Auth\Administrator;
 use Encore\Admin\Controllers\AdminController;
@@ -13,9 +14,11 @@ class CourseController extends AdminController
 {
     protected $courses;
     protected $title = "Course";
+    protected $article;
 
     public function __construct(){
         $this->courses = new Course();
+        $this->article = new Artikel();
     }
 
     protected function grid()
@@ -33,12 +36,34 @@ class CourseController extends AdminController
             $grid->disableActions();
 
         }
-
+        
         $grid->disableExport();
 
 
         return $grid;
     }
+    protected function gridd()
+    {
+        $grid = new Grid($this->article);
+
+        $grid->id('ID')->sortable();
+        $grid->judulArtikel()->ucfirst()->limit(30);
+        $grid->filter(function ($filter) {
+            $filter->like('judulArtikel');
+            $filter->between('updated_at')->datetime();
+        });
+        if(Admin::user()->isRole('mentor')){
+            $grid->disableCreateButton();
+            $grid->disableActions();
+
+        }
+        
+        $grid->disableExport();
+
+
+        return $grid;
+    }
+
 
 
     /**
