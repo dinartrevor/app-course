@@ -30,6 +30,7 @@ class CourseController extends AdminController
         });
         if(Admin::user()->isRole('administrator')){
             $grid->disableCreateButton();
+            $grid->disableActions();
 
         }
 
