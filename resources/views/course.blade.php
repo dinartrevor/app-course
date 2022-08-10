@@ -202,7 +202,7 @@
                                         
                                     </div>
                                     <p>{{ \Illuminate\Support\Str::limit($value->deskripsi, 150, $end='...') }}</p>
-                                    <a target="_blank" rel="nofollow" href="{{route('detailCourse.user')}}">Pelajari Course &rarr;</a>
+                                    <a href="{{route('detailCourse.user', $value->id)}}">Pelajari Course &rarr;</a>
                                 </div>
                             </div>
                         </div>

@@ -195,19 +195,16 @@
                         <div class="col-md-6">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary text-center">Judul Course</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary text-center">{{$detailCourse->namaCourse}}</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
                                     <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DFviVDjM_ek"></iframe>
+                                    <iframe class="embed-responsive-item" src="{{$embed_video}}"></iframe>
                                 </div>
                                     </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                        target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                            <a target="_blank" rel="nofollow" href="{{route('course.user')}}">Kembali</a>
+                                    <p>{{$detailCourse->deskripsi}}</p>
+                                    <a target="_blank" rel="nofollow" href="{{route('course.user')}}">Kembali</a>
                                 </div>
                             </div>
                         </div>

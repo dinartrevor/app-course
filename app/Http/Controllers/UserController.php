@@ -76,18 +76,19 @@ class UserController extends Controller
         ->get();  
         return view('detailArtikel', compact("detailArtikel"));
     }
-    public function detailCourse()
+    public function detailCourse($id)
     {
         $detailCourse = Course::select("courses.*","admin_users.name as name_mentor")
         ->join('admin_users', "courses.idMentor", "=", "admin_users.id")
-        ->get();    
+        ->where("courses.id", $id)
+        ->first();    
 
         if(!empty($detailCourse)){
-            foreach($detailCourse as $key => $value){
-                $detailCourse[$key]->embed_video = $this->getYoutubeEmbedUrl($value->video);
-            }
+            $embed_video = $this->getYoutubeEmbedUrl($detailCourse->video);
+            return view('detailCourse', compact("detailCourse","embed_video"));
+        }else{
+            return abort(404);
         }
-        return view('detailCourse', compact("detailCourse"));
-        //return view('detailCourse');
+        
     }
 }
