@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Artikel;
 use App\Models\Auth\Administrator;
+use App\Models\Diskusi;
 use Encore\Admin\Facades\Admin;
-use Session;
+
 
 class UserController extends Controller
 {
@@ -137,13 +138,32 @@ class UserController extends Controller
         ->where("courses.id", $id)
         ->first();    
 
+        $diskusi  = Diskusi::select("diskusi.*","admin_users.name as nama_user")
+        ->join('admin_users', "diskusi.idSiswa", "=", "admin_users.id")
+        ->where("diskusi.idCourse", $id)
+        ->get();    
+
+
         if(!empty($detailCourse)){
             $embed_video = $this->getYoutubeEmbedUrl($detailCourse->video);
-            return view('detailCourse', compact("detailCourse","embed_video"));
+            return view('detailCourse', compact("detailCourse","embed_video","diskusi"));
         }else{
             return abort(404);
         }
         
+    }
+
+    public function insertDiskusi(Request $request){
+        $data = $request->all();
+            $data_diskusi = [
+                "idSiswa"           => Admin::user()->id,
+                "idCourse"          => $request->idCourse,
+                "dataPertanyaan"    => $request->dataPertanyaan
+            ];
+            if($data_diskusi && Diskusi::create($data_diskusi)){
+                return redirect()->back()->with("success", "Berhasil Menambahkan diskusi");
+            }
+    
     }
 
     private function getYoutubeEmbedUrl($url)
@@ -169,4 +189,6 @@ class UserController extends Controller
 
         return true;
     }
+
+    
 }

@@ -41,6 +41,7 @@ Route::group(
         Route::get('artikel', 'UserController@artikel')->name('artikel.user');
         Route::get('detailArtikel/{id}', 'UserController@detailArtikel')->name('detailArtikel.user');
         Route::get('detailCourse/{id}', 'UserController@detailCourse')->name('detailCourse.user');
+        Route::post('diskusi', 'UserController@insertDiskusi')->name('diskusi.post');
     }
 );
 

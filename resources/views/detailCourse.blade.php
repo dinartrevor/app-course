@@ -216,21 +216,35 @@
                             <div class="container mt-5">
                                 <div class="d-flex justify-content-center row">
                                     <div class="col-md-8">
-                                        <div class="d-flex flex-column comment-section">
-                                            <h4 class="text-center">Diskusi</h4>
-                                            <div class="bg-white p-2">
-                                                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
-                                                    <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">Marry Andrews</span><span class="date text-black-50">Shared publicly - Jan 2020</span></div>
+                                        <form action="{{route('diskusi.post')}}" method="POST">
+                                            @csrf
+                                            <div class="d-flex flex-column comment-section">
+                                                <h4 class="text-center">Diskusi</h4>
+                                                @foreach($diskusi as $value)
+                                                <div class="bg-white p-2">
+                                                    <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                                                        <div class="d-flex flex-column justify-content-start ml-2">
+                                                            <span class="d-block font-weight-bold name">{{$value->nama_user}}</span>
+                                                            <span class="date text-black-50">{{$value->created_at->diffForHumans()}}</span>
+                                                            <p>{{$value->dataPertanyaan}}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                
+                                                @endforeach
+                                                <div class="bg-white">
+                                                </div>
+                                                <div class="bg-light p-2">
+                                                    <div class="d-flex flex-row align-items-start">
+                                                        <input type="hidden" name="idCourse" value="{{$detailCourse->id}}">
+                                                        <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                                                        <textarea id="title" class="form-control ml-1 shadow-none textarea" name="dataPertanyaan"></textarea>
+                                                    </div>
+                                                    <div class="mt-2 text-right">
+                                                        <button class="btn btn-primary btn-sm shadow-none" type="submit" id="save-diskusi">Submit</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="bg-white">
-                                            </div>
-                                            <div class="bg-light p-2">
-                                                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea id="title" class="form-control ml-1 shadow-none textarea" ></textarea></div>
-                                                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button" id="save-diskusi">Submit</button></div>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -282,6 +296,11 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('js/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    @if ($message = Session::get('success'))
+      <script>
+        alert("Berhasil Menambahkan Diskusi");
+      </script>
+    @endif
     <script>
         $("#save-diskusi").click(function(){
             var title = $('#title').val();
@@ -289,6 +308,7 @@
                 alert("Comment Wajib Diisi");
             }
         });
+        
     </script>
 
 </body>
