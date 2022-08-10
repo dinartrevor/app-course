@@ -33,6 +33,9 @@ Route::group(
     function () {
         Route::get('/', 'UserController@login')->name('login.user');;
         Route::get('register', 'UserController@register')->name('register.user');
+        Route::post('register', 'UserController@insertRegister')->name('register.post');
+        Route::post('login', 'UserController@insertLogin')->name('login.post');
+        Route::post('logout', 'UserController@getLogout')->name('logout.user');
         Route::get('user', 'UserController@user')->name('user.user');
         Route::get('course', 'UserController@course')->name('course.user');
         Route::get('artikel', 'UserController@artikel')->name('artikel.user');

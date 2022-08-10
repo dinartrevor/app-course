@@ -36,7 +36,8 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" autocomplete="off" method="POST">
+                            <form class="user" action="{{route('register.post')}}" autocomplete="off" method="POST">
+                                @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="name" placeholder="Nama" name="name">
@@ -78,6 +79,11 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    @if ($message = Session::get('success'))
+      <script>
+        alert("Register Berhasil");
+      </script>
+    @endif
 
 </body>
 

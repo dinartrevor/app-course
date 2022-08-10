@@ -83,10 +83,15 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Artikel</span></a>
             </li>
+            
             <li class="nav-item">
-                <a class="nav-link" href="{{route('artikel.user')}}">
+                <a  class="nav-link" href="{{ route('logout.user') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Logout</span></a>
+                    <span>Logout</span>
+                </a>
+                <form id="logout-form" action="{{ route('logout.user') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
 
             <!-- Divider -->
@@ -97,6 +102,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
         </ul>
+       
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -152,7 +158,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Admin::user()->name}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -296,6 +302,11 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    @if ($message = Session::get('success'))
+      <script>
+        alert("Login Berhasil");
+      </script>
+    @endif
 
 </body>
 

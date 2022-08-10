@@ -41,20 +41,18 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="{{route('login.post')}}" autocomplete="off" method="POST">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="email" class="form-control form-control-user" name="email" placeholder="Enter Email Address..." required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user"placeholder="Password" name="password" required>
                                         </div>
                                                </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                         <hr>
                                     <div class="text-center">
                                         <a class="small" href="{{route('register.user')}}">Create an Account!</a>
@@ -80,6 +78,16 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    @if ($message = Session::get('success'))
+      <script>
+        alert("Login Gagal");
+      </script>
+    @endif
+    @if ($message = Session::get('login'))
+      <script>
+        alert("Register Berhasil");
+      </script>
+    @endif
 
 </body>
 
