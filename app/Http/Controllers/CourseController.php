@@ -27,7 +27,7 @@ class CourseController extends AdminController
         $grid->namaCourse()->ucfirst()->limit(30);
         $grid->filter(function ($filter) {
             $filter->like('namaCourse');
-            $filter->between('updated_at')->datetime();
+            // $filter->between('updated_at')->datetime();
         });
         if(Admin::user()->isRole('administrator')){
             $grid->disableCreateButton();

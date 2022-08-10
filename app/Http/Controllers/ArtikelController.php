@@ -27,12 +27,13 @@ class ArtikelController extends AdminController
         $grid->tanggalPembuatan();
         $grid->filter(function ($filter) {
             $filter->like('judulArtikel');
-            $filter->between('updated_at')->datetime();
+            // $filter->between('updated_at')->datetime();
         });
 
         $grid->disableExport();
         if(Admin::user()->isRole('mentor')){
             $grid->disableCreateButton();
+            $grid->disableActions();
 
         }
 
