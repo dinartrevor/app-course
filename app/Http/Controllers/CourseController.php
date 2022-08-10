@@ -67,9 +67,9 @@ class CourseController extends AdminController
     }
     public function detail($id) {
         $show = new Show($this->courses->findOrFail($id));
-        $show->field('namaCourse', "Nama Kursus");
+        $show->field('namaCourse', "Nama Course");
         $show->field('video', "Link Video");
-        $show->field('deskripsi', 'Deskripsi Kursus');
+        $show->field('deskripsi', 'Deskripsi Course');
         return $show;
     }
 }
