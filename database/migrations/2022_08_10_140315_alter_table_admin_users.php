@@ -14,8 +14,9 @@ class AlterTableAdminUsers extends Migration
     public function up()
     {
         Schema::table('admin_users', function($table) {
-            $table->string('email', 100);
-            $table->string('handphone', 20);
+            $table->string('email', 100)->nullable();
+            $table->string('handphone', 20)->nullable();
+            $table->string('type', 3)->nullable();
         });
     }
 
