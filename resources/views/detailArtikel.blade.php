@@ -169,20 +169,16 @@
                     <div class="card-header py-3">
                         <div class="row">
                             <div class="col-md-10">
-                                <h6 class="m-0 font-weight-bold text-primary text-center">Illustrations</h6>
+                                <h6 class="m-0 font-weight-bold text-primary text-center">{{$detailArtikel->judulArtikel}}</h6>
                             </div>
                             <div class="col-md-2">
-                                <h6 class="m-0 font-weight-bold float-right">26 Februrai 2022</h6>
+                                <h6 class="m-0 font-weight-bold float-right">{{$detailArtikel->tanggalPembuatan}}</h6>
 
                             </div>  
                         </div> 
                     </div>
                     <div class="card-body">
-                        <p>Add some quality, svg illustrations to your project courtesy of 
-                            <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                            constantly updated collection of beautiful svg images that you can use
-                            completely free and without attribution!
-                        </p>
+                        <p>{{$detailArtikel->isiArtikel}}</p>
                         <a target="_blank" class="btn btn-primary float-right" href="{{route('artikel.user')}}">Kembali</a>
                     </div>
                 </div>

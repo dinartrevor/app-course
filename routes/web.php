@@ -36,7 +36,7 @@ Route::group(
         Route::get('user', 'UserController@user')->name('user.user');
         Route::get('course', 'UserController@course')->name('course.user');
         Route::get('artikel', 'UserController@artikel')->name('artikel.user');
-        Route::get('detailArtikel', 'UserController@detailArtikel')->name('detailArtikel.user');
+        Route::get('detailArtikel/{id}', 'UserController@detailArtikel')->name('detailArtikel.user');
         Route::get('detailCourse/{id}', 'UserController@detailCourse')->name('detailCourse.user');
     }
 );

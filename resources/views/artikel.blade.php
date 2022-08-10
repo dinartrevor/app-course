@@ -177,7 +177,7 @@
                                         
                                     </div>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 200, $end='...') }}</p>
-                                    <a target="_blank" rel="nofollow" href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
+                                    <a href="{{route('detailArtikel.user', $value->id)}}">Baca Artikel &rarr;</a>
                                 </div>
                             </div>
                         </div>

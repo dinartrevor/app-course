@@ -70,11 +70,17 @@ class UserController extends Controller
         }
         return 'https://www.youtube.com/embed/' . $youtube_id;
     }
-    public function detailArtikel()
+    public function detailArtikel($id)
     {
         $detailArtikel = Artikel::orderByDesc("created_at")
-        ->get();  
-        return view('detailArtikel', compact("detailArtikel"));
+        ->where("id", $id)
+        ->first();
+        
+        if(!empty($detailArtikel)){
+            return view('detailArtikel', compact("detailArtikel"));
+        }else{
+            return abort(404);
+        }
     }
     public function detailCourse($id)
     {

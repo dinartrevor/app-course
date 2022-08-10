@@ -232,20 +232,10 @@
                                         
                                     </div>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 200, $end='...') }}</p>
-                                    <a  href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
+                                    <a href="{{route('detailArtikel.user', $value->id)}}">Baca Artikel &rarr;</a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="col-md-4 mb-3">
-                            <div class="card" style="width: 20rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$value->judulArtikel}} - {{$value->tanggalPembuatan}}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 150, $end='...') }}</p>
-                                    <a href="{{route('detailArtikel.user')}}" class="btn btn-primary">Baca Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div> -->
                         @endforeach
                     </div>
                 </div>
