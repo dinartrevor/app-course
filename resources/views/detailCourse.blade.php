@@ -223,8 +223,8 @@
                                             <div class="bg-white">
                                             </div>
                                             <div class="bg-light p-2">
-                                                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                                                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Submit</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+                                                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea id="title" class="form-control ml-1 shadow-none textarea" ></textarea></div>
+                                                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button" id="save-diskusi">Submit</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -276,21 +276,16 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset('js/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script>
+        $("#save-diskusi").click(function(){
+            var title = $('#title').val();
+            if(title == "" || title == undefined){
+                alert("Comment Wajib Diisi");
+            }
+        });
+    </script>
 
 </body>
 
