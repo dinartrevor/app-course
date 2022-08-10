@@ -204,7 +204,7 @@
                                     <div class="text-center">
                                         
                                     </div>
-                                    <a target="_blank" rel="nofollow" href="{{route('detailCourse.user')}}">Pelajari Course &rarr;</a>
+                                    <a  href="{{route('detailCourse.user', $value->id)}}">Pelajari Course &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                                         
                                     </div>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($value->isiArtikel, 200, $end='...') }}</p>
-                                    <a target="_blank" rel="nofollow" href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
+                                    <a  href="{{route('detailArtikel.user')}}">Baca Artikel &rarr;</a>
                                 </div>
                             </div>
                         </div>
