@@ -222,7 +222,8 @@
                                                 <h4 class="text-center">Diskusi</h4>
                                                 @foreach($diskusi as $value)
                                                 <div class="bg-white p-2">
-                                                    <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                                                    <div class="d-flex flex-row user-info">
+                                                        <img class="rounded-circle" src="https://flyclipart.com/thumb2/user-icon-png-pnglogocom-133466.png" width="60" height="50">
                                                         <div class="d-flex flex-column justify-content-start ml-2">
                                                             <span class="d-block font-weight-bold name">{{$value->nama_user}}</span>
                                                             <span class="date text-black-50">{{$value->created_at->diffForHumans()}}</span>
@@ -236,7 +237,7 @@
                                                 <div class="bg-light p-2">
                                                     <div class="d-flex flex-row align-items-start">
                                                         <input type="hidden" name="idCourse" value="{{$detailCourse->id}}">
-                                                        <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                                                        <img class="rounded-circle" src="https://flyclipart.com/thumb2/user-icon-png-pnglogocom-133466.png" width="40">
                                                         <textarea id="title" class="form-control ml-1 shadow-none textarea" name="dataPertanyaan"></textarea>
                                                     </div>
                                                     <div class="mt-2 text-right">
